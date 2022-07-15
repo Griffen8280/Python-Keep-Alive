@@ -65,6 +65,8 @@ def update():
 		window["-LST-"].update(window["-LST-"].get() + alarm + '\t')
 
 def dontsleep():
+	'''Keeps the computer from sleeping without interfering with main input'''
+	
 	while True:
 		pyautogui.press('volumedown')
 		time.sleep(1)
@@ -117,4 +119,5 @@ while True:
 
 window.close()
 os.system("taskkill /f /im python.exe")
+os.system("taskkill /f /im pythonw.exe")
 exit()
