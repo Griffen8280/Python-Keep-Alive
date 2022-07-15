@@ -51,7 +51,7 @@ def confirm_alarm():
 	update()
 
 def stop_alarm():
-	'''Stops the alarm currently going off'''
+	'''Stops the alarm currently set'''
 
 	window["Stop"].update(disabled=True)
 	list_of_alarms.pop(0)
@@ -73,6 +73,8 @@ def dontsleep():
 		pyautogui.press('volumeup')
 		time.sleep(300)
 
+'''This section builds the Window'''		
+		
 clock_layout = [[sg.Text("", key="-TIME-",font=("ds-digital", 100),background_color="black",text_color="cyan")],
 		[sg.Text("Set a Quit Time to turn on keep alive", size=(50, 1))],
 		[sg.Text("When quit time happens the program will close Outlook, Skype, Teams, & itself", size=(60, 1))]]
@@ -99,6 +101,8 @@ layout = [[sg.TabGroup([[sg.Tab("Clock", clock_layout),
 window = sg.Window('Keep Alive', layout)
 
 while True:
+	'''Event handlers while the program is active'''
+	
 	event, values = window.read(timeout=100)
 	if event == sg.WINDOW_CLOSED:
 		break
