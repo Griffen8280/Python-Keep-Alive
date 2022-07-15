@@ -32,9 +32,9 @@ def get_time():
 				except:
 					print("Teams not running")
 				
+				window.close()
 				os.system("taskkill /f /im python.exe")
 				os.system("taskkill /f /im pythonw.exe")
-				window.close()
 				exit()
 
 def confirm_alarm():
