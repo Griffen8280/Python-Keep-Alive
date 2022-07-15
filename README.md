@@ -12,6 +12,7 @@ You will need the following in your imports:
 5. PyAutoGUI
 6. Signal
 7. Threading
+
 From this list PySimpleGUI, PyGame, and PyAutoGUI will need to be installed through pip.
 
 ----------
