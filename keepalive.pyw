@@ -112,10 +112,10 @@ while True:
 		stop_alarm()
 	if event == "Shutdown":
 		sec_val = values["-SEC-"]
-		os.system("shutdown /s /t sec_val")
+		os.system("shutdown /s /t " + sec_val)
 	if event == "Restart":
 		sec_val = values["-SEC-"]
-		os.system("shutdown /r /t sec_val")
+		os.system("shutdown /r /t " + sec_val)
 	if event == "Calculator":
 		os.system("start calc.exe")
 
