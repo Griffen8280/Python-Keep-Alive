@@ -24,10 +24,6 @@ def get_time():
 				except:
 					print("Outlook not running")
 				try:
-					os.system("taskkill /f /im lync.exe")
-				except:
-					print("Skype not running")
-				try:
 					os.system("taskkill /f /im Teams.exe")
 				except:
 					print("Teams not running")
@@ -77,7 +73,7 @@ def dontsleep():
 		
 clock_layout = [[sg.Text("", key="-TIME-",font=("ds-digital", 100),background_color="black",text_color="cyan")],
 		[sg.Text("Set a Quit Time to turn on keep alive", size=(50, 1))],
-		[sg.Text("When quit time happens the program will close Outlook, Skype, Teams, & itself", size=(60, 1))]]
+		[sg.Text("When quit time happens the program will close Outlook, Teams, & itself", size=(60, 1))]]
 
 alarm_layout = [[sg.Text("Hour", size=(20, 1)), sg.Text("Minute", size=(20, 1))],
 		[sg.Input(key="-HR-", size=(20, 1)), sg.Input(key="-MIN-", size=(20, 1))],
