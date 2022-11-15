@@ -15,6 +15,11 @@ You will need the following in your imports:
 
 From this list PySimpleGUI, PyGame, and PyAutoGUI will need to be installed through pip.
 
+For convenience you could also run the following:
+'pip install -r requirements.txt'
+
+This command will use the provided requirements.txt file to install the dependancies automatically.
+
 ----------
 
 ## Functionality
