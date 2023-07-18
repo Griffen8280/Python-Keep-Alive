@@ -1,5 +1,5 @@
 import PySimpleGUI as sg
-import time, pygame, os, pyautogui, signal, threading
+import time, pygame, os, pyautogui, signal, threading, wmi
 
 pygame.init()
 
@@ -69,6 +69,27 @@ def dontsleep():
 		pyautogui.press('volumeup')
 		time.sleep(300)
 
+def check_process_running(str_):
+	match str_:
+		case "Outlook.exe":
+			if(c.Win32_Process(name=str_)):
+				pass
+				#print("Outlook is running")
+			else:
+				os.system("start Outlook.exe")
+		case "Teams.exe":
+			if(c.Win32_Process(name=str_)):
+				pass
+				#print("Teams is running")
+			else:
+				os.system("start Teams.exe")
+		case "Firefox.exe":
+			if(c.Win32_Process(name=str_)):
+				pass
+				#print("Firefox is running")
+			else:
+				os.system("start Firefox.exe")
+
 '''This section builds the Window'''		
 		
 clock_layout = [[sg.Text("", key="-TIME-",font=("ds-digital", 100),background_color="black",text_color="cyan")],
@@ -95,6 +116,10 @@ layout = [[sg.TabGroup([[sg.Tab("Clock", clock_layout),
 			sg.Tab("Shutdown/Restart", shutdown_layout)]])]]
 
 window = sg.Window('Keep Alive', layout)
+c=wmi.WMI()
+check_process_running("Outlook.exe")
+check_process_running("Teams.exe")
+check_process_running("Firefox.exe")
 
 while True:
 	'''Event handlers while the program is active'''
