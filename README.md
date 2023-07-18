@@ -12,6 +12,7 @@ You will need the following in your imports:
 5. PyAutoGUI
 6. Signal
 7. Threading
+8. WMI
 
 From this list PySimpleGUI, PyGame, and PyAutoGUI will need to be installed through pip.
 
@@ -28,6 +29,12 @@ This program simply supplies you with a clock(in 24h format) and an alarm interf
 3. Microsoft Teams
 
 Once those applications are shutdown the program will then kill any other threads it has started then shut itself down.  When a quit time is entered the keep alive function of the application will start up in a separate thread and toggle the volume down and up by 1 every 5 minutes.  This will prevent the machine from sleeping or resetting your status in the communication apps to "away".  Finally the Shutdown/Restart tab is for scheduling a shutdown or reboot of the machine if needed.  It uses the built in Windows function for this and will take the time to shutdown as an amount of seconds the user enters.  There is a quick reference table at the bottom for convenience however if more time is needed then the calculator button will open that app on the machine so a different amount of time can be calculated.
+
+## Update
+Added a function to check and see if the primary communication apps (Outlook, Teams) are running when the application is first started.  If they are running already it will do nothing, if they are not it will attempt to start them.  This makes the app a onestop starter for all the primary applications for the user, it currently is set to start the following:
+1. Outlook
+2. Teams
+3. Firefox
 
 ----------
 
