@@ -82,7 +82,8 @@ def check_process_running(str_):
 				pass
 				#print("Teams is running")
 			else:
-				os.system("start Teams.exe")
+				#Be sure to replace the XXXXXX with your username
+				os.system('C:/Users/XXXXXX/AppData/Local/Microsoft/Teams/Update.exe --processStart "Teams.exe"')
 		case "Firefox.exe":
 			if(c.Win32_Process(name=str_)):
 				pass
